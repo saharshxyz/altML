@@ -14,7 +14,7 @@ const images = document.images;
 
 for(i = 0; i < images.length; i++) { // Loop over all of the images in the website
   let currentImage = images[i];
-  if(currentImage.alt == "" && currentImage.hasAttribute("src") && currentImage.src !== "") { // If the alt tag of the image is empty, the image has loaded correctly, the image has an src attribute, and the src attribute is not empty.
+  if(currentImage.alt == "" && currentImage.hasAttribute("src") && currentImage.src !== "") { // If the alt tag of the image is empty, the image has an src attribute, and the src attribute is not empty.
     let oldAlt = images[i].alt;
     let newAlt = "altML changed the alt attribute in this image." // TODO: Set newAlt to tensorflow result
     images[i].alt = newAlt; // Changes oldAlt to newAlt
