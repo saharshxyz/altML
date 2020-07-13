@@ -1,3 +1,5 @@
+console.info("altML: background.js is loaded.")
+
 chrome.runtime.onMessage.addListener(
     function(message, callback) {
       if (message == "runContentScript"){
