@@ -1,24 +1,11 @@
+# altML
+
+**Mission:** A chrome extension that looks at all the images on a webpage. If there is an image that does not have an alt tag, use ml to generate one so that screen-readers can actually recognize it.
+
+Created by [May F.,](https://github.com/maydonut) [James K.](https://github.com/thatrobotdev), and [Jonathan A.](https://github.com/jonny13), during the [CodeLabs Internship 2020](https://labs.codeday.org/). Mentored by [Saharsh Yeruva](https://github.com/saharshy29).
+
 ## Image Caption Generator
-
-[![Issues](https://img.shields.io/github/issues/dabasajay/Image-Caption-Generator.svg?color=%231155cc)](https://github.com/dabasajay/Image-Caption-Generator/issues)
-[![Forks](https://img.shields.io/github/forks/dabasajay/Image-Caption-Generator.svg?color=%231155cc)](https://github.com/dabasajay/Image-Caption-Generator/network)
-[![Stars](https://img.shields.io/github/stars/dabasajay/Image-Caption-Generator.svg?color=%231155cc)](https://github.com/dabasajay/Image-Caption-Generator/stargazers)
-[![Ajay Dabas](https://img.shields.io/badge/Ajay-Dabas-825ee4.svg)](https://dabasajay.github.io/)
-
 A neural network to generate captions for an image using CNN and RNN with BEAM Search.
-
-<p align="center">
-  <strong>Examples</strong>
-</p>
-
-<p align="center">
-  <img src="https://cdn-images-1.medium.com/max/1600/1*6BFOIdSHlk24Z3DFEakvnQ.png" width="85%" title="Example of Image Captioning" alt="Example of Image Captioning">
-</p>
-
-<p align="center">
-	Image Credits : <a href="https://towardsdatascience.com/image-captioning-in-deep-learning-9cd23fb4d8d2">Towardsdatascience</a>
-</p>
-
 ## Table of Contents
 
 1. [Requirements](#1-requirements)
@@ -28,16 +15,15 @@ A neural network to generate captions for an image using CNN and RNN with BEAM S
 5. [Procedure to Test on new images](#5-procedure-to-test-on-new-images)
 6. [Configurations (config.py)](#6-configurations-configpy)
 7. [Frequently encountered problems](#7-frequently-encountered-problems)
-8. [TODO](#8-todo)
-9. [References](#9-references)
+8. [References](#8-references)
 
 ## 1. Requirements
 
 Recommended System Requirements to train model.
 
 <ul type="square">
-	<li>A good CPU and a GPU with atleast 8GB memory</li>
-	<li>Atleast 8GB of RAM</li>
+	<li>A good CPU and a GPU with at least 8GB memory</li>
+	<li>At least 8GB of RAM</li>
 	<li>Active internet connection so that keras can download inceptionv3/vgg16 model weights</li>
 </ul>
 
@@ -64,7 +50,7 @@ Required libraries for Python along with their version numbers used while making
 	Download Link Credits:<a href="https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/"> Jason Brownlee</a>
 </ul>
 
-<strong>Important:</strong> After downloading the dataset, put the reqired files in train_val_data folder
+<strong>Important:</strong> After downloading the dataset, put the required files in train_val_data folder
 
 ## 2. Training parameters and results
 
@@ -85,17 +71,20 @@ Required libraries for Python along with their version numbers used while making
 
 ## 3. Generated Captions on Test Images
 
-**Model used** - *InceptionV3 + AlternativeRNN*
+**Model used** - *VGG16 + AlternativeRNN*
+,
+
 
 | Image | Caption |
 | :---: | :--- |
-| <img width="50%" src="https://github.com/dabasajay/Image-Caption-Generator/raw/master/test_data/bikestunt.jpg" alt="Image 1"> | <ul><li><strong>Argmax:</strong> A man in a blue shirt is riding a bike on a dirt path.</li><li><strong>BEAM Search, k=3:</strong> A man is riding a bicycle on a dirt path.</li></ul>|
-| <img src="https://github.com/dabasajay/Image-Caption-Generator/raw/master/test_data/surfing.jpeg" alt="Image 2"> | <ul><li><strong>Argmax:</strong> A man in a red kayak is riding down a waterfall.</li><li><strong>BEAM Search, k=3:</strong> A man on a surfboard is riding a wave.</li></ul>|
+| <img width="50%" src="https://images.unsplash.com/photo-1502126324834-38f8e02d7160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Image 1"> | <ul><li><strong>BEAM Search, k=3:</strong> A man in a red shirt is climbing a rock.</li></ul>|
+| <img src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Image 2"> | <ul><li><strong>BEAM Search, k=3:</strong> A man in a wetsuit is riding a wave.</li></ul>|
 
+Photo Credits: <a href="https://unsplash.com/@bradbarmore">Brad Bradmore</a> and <a href="https://unsplash.com/@sincerelymedia">Sincerely Media</a> on <a href="https://unsplash.com">Unsplash</a>
 ## 4. Procedure to Train Model
 
 1. Clone the repository to preserve directory structure.<br>
-`git clone https://github.com/dabasajay/Image-Caption-Generator.git`
+`git clone https://github.com/saharshy29/altML.git`
 2. Put the required dataset files in `train_val_data` folder (files mentioned in readme there).
 3. Review `config.py` for paths and other configurations (explained below).
 4. Run `train_val.py`.
@@ -103,8 +92,8 @@ Required libraries for Python along with their version numbers used while making
 ## 5. Procedure to Test on new images
 
 1. Clone the repository to preserve directory structure.<br>
-`git clone https://github.com/dabasajay/Image-Caption-Generator.git`
-2. Train the model to generate required files in `model_data` folder (steps given above).
+`git clone https://github.com/saharshy29/altML.git`
+2. Train the model to generate required files in `model_data` folder (steps given above) OR use the previously trained model weights for VGG16+AlternativeRNN with a Beam Search, k=3.
 3. Put the test images in `test_data` folder.
 4. Review `config.py` for paths and other configurations (explained below).
 5. Run `test.py`.
@@ -143,27 +132,11 @@ Required libraries for Python along with their version numbers used while making
   - Due to stochastic nature of these algoritms, results *may* differ slightly everytime. Even though I did set random seed to make results reproducible, results *may* differ slightly.
 - **Results aren't very great using beam search compared to argmax**:
   - Try higher `k` in BEAM search using `beam_search_k` parameter in config. Note that higher `k` will improve results but it'll also increase inference time significantly.
-
-## 8. TODO
-
-- [X] Support for VGG16 Model. Uses InceptionV3 Model by default.
-
-- [X] Implement 2 architectures of RNN Model.
-
-- [X] Support for batch processing in data generator with shuffling.
-
-- [X] Implement BEAM Search.
-
-- [X] Calculate BLEU Scores using BEAM Search.
-
-- [ ] Implement Attention and change model architecture.
-
-- [ ] Support for pre-trained word vectors like word2vec, GloVe etc.
-
-## 9. References
+## 8. References
 
 <ul type="square">
 	<li><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Vinyals_Show_and_Tell_2015_CVPR_paper.pdf">Show and Tell: A Neural Image Caption Generator</a> - Oriol Vinyals, Alexander Toshev, Samy Bengio, Dumitru Erhan</li>
 	<li><a href="https://arxiv.org/abs/1703.09137">Where to put the Image in an Image Caption Generator</a> - Marc Tanti, Albert Gatt, Kenneth P. Camilleri</li>
 	<li><a href="https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/">How to Develop a Deep Learning Photo Caption Generator from Scratch</a></li>
+  <li><a href="https://github.com/dabasajay/Image-Caption-Generator">Image-Caption-Generator</li>
 </ul>
