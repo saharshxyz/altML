@@ -1,3 +1,3 @@
-<h1>Test Folder</h1>
+# Test Folder
 
 Images will be temporarily stored here and then deleted.
