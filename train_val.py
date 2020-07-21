@@ -1,4 +1,4 @@
-# github repo: dabasajay/Image-Caption-Generator
+# Based on: https://github.com/dabasajay/Image-Caption-Generator
 
 from pickle import load
 import tensorflow as tf
