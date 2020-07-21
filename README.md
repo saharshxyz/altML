@@ -6,7 +6,7 @@ Created by [May F.,](https://github.com/maydonut) [James K.](https://github.com/
 
 ## Image Caption Generator
 A neural network to generate captions for an image using CNN and RNN with BEAM Search.
-## Table of Contents
+### Table of Contents
 
 1. [Requirements](#1-requirements)
 2. [Training parameters and results](#2-training-parameters-and-results)
@@ -17,44 +17,39 @@ A neural network to generate captions for an image using CNN and RNN with BEAM S
 7. [Frequently encountered problems](#7-frequently-encountered-problems)
 8. [References](#8-references)
 
-## 1. Requirements
+#### 1. Requirements
 
 Recommended System Requirements to train model.
 
-<ul type="square">
-	<li>A good CPU and a GPU with at least 8GB memory</li>
-	<li>At least 8GB of RAM</li>
-	<li>Active internet connection so that keras can download inceptionv3/vgg16 model weights</li>
-</ul>
+* A good CPU and a GPU with at least 8GB memory
+* At least 8GB of RAM</li>
+* Active internet connection so that keras can download inceptionv3/vgg16 model weights
 
 Required libraries for Python along with their version numbers used while making & testing of this project
 
-<ul type="square">
-	<li>Python - 3.6.7</li>
-	<li>Numpy - 1.16.4</li>
-	<li>Tensorflow - 1.13.1</li>
-	<li>Keras - 2.2.4</li>
-	<li>nltk - 3.2.5</li>
-	<li>PIL - 4.3.0</li>
-	<li>Matplotlib - 3.0.3</li>
-	<li>tqdm - 4.28.1</li>
-</ul>
+* Python - 3.6.7
+* Numpy - 1.16.4
+* Tensorflow - 1.13.1
+* Keras - 2.2.4
+* nltk - 3.2.5
+* PIL - 4.3.0
+* Matplotlib - 3.0.3
+* tqdm - 4.28.1
 
-<strong>Flickr8k Dataset:</strong> <a href="https://forms.illinois.edu/sec/1713398">Dataset Request Form</a>
+**Flickr8k Dataset:** [Dataset Request Form](https://forms.illinois.edu/sec/1713398)
 
 *If the link above is unavaliable, you can try these direct download links:*
 
-<ul type="square">
-	<li><a href="https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_Dataset.zip">Flickr8k_Dataset</a></li>
-	<li><a href="https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_text.zip">Flickr8k_text</a></li>
-	Download Link Credits:<a href="https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/"> Jason Brownlee</a>
-</ul>
+* [Flickr8k_Dataset](https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_Dataset.zip)</li>
+* [Flickr8k_text](https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_text.zip)</li>
 
-<strong>Important:</strong> After downloading the dataset, put the required files in train_val_data folder
+Link Credit: [Jason Brownlee](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/)
 
-## 2. Training parameters and results
+**Important:** After downloading the dataset, put the required files in `train_val_data` folder
 
-#### NOTE
+#### 2. Training parameters and results
+
+##### NOTE
 
 - `batch_size=64` took ~14GB GPU memory in case of *InceptionV3 + AlternativeRNN* and *VGG16 + AlternativeRNN*
 - `batch_size=64` took ~8GB GPU memory in case of *InceptionV3 + RNN* and *VGG16 + RNN*
@@ -69,36 +64,35 @@ Required libraries for Python along with their version numbers used while making
 | **VGG16 + RNN** <ul><li>Epochs = 7</li><li>Batch Size = 64</li><li>Optimizer = Adam</li></ul> |<ul>**Crossentropy loss**<br>*(Lower the better)*<li>loss(train_loss): 2.6297</li><li>val_loss: 3.3486</li>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.557626</li><li>BLEU-2: 0.317652</li><li>BLEU-3: 0.216636</li><li>BLEU-4: 0.105288</li></ul> |<ul>**k = 3**<br><br>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.568993</li><li>BLEU-2: 0.326569</li><li>BLEU-3: 0.226629</li><li>BLEU-4: 0.113102</li></ul> |
 
 
-## 3. Generated Captions on Test Images
+#### 3. Generated Captions on Test Images
 
 **Model used** - *VGG16 + AlternativeRNN*
 ,
-
 
 | Image | Caption |
 | :---: | :--- |
 | <img width="50%" src="https://images.unsplash.com/photo-1502126324834-38f8e02d7160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Image 1"> | <ul><li><strong>BEAM Search, k=3:</strong> A man in a red shirt is climbing a rock.</li></ul>|
 | <img src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Image 2"> | <ul><li><strong>BEAM Search, k=3:</strong> A man in a wetsuit is riding a wave.</li></ul>|
 
-Photo Credits: <a href="https://unsplash.com/@bradbarmore">Brad Bradmore</a> and <a href="https://unsplash.com/@sincerelymedia">Sincerely Media</a> on <a href="https://unsplash.com">Unsplash</a>
-## 4. Procedure to Train Model
+Photo Credits: [Brad Bradmore](https://unsplash.com/@bradbarmore) and [Sincerely Media](https://unsplash.com/@sincerelymedia) on [Unsplash](https://unsplash.com).
+#### 4. Procedure to Train Model
 
-1. Clone the repository to preserve directory structure.<br>
+1. Clone the repository to preserve directory structure.
 `git clone https://github.com/saharshy29/altML.git`
 2. Put the required dataset files in `train_val_data` folder (files mentioned in readme there).
 3. Review `config.py` for paths and other configurations (explained below).
 4. Run `train_val.py`.
 
-## 5. Procedure to Test on new images
+#### 5. Procedure to Test on new images
 
-1. Clone the repository to preserve directory structure.<br>
+1. Clone the repository to preserve directory structure.
 `git clone https://github.com/saharshy29/altML.git`
 2. Train the model to generate required files in `model_data` folder (steps given above) OR use the previously trained model weights for VGG16+AlternativeRNN with a Beam Search, k=3.
 3. Put the test images in `test_data` folder.
 4. Review `config.py` for paths and other configurations (explained below).
 5. Run `test.py`.
 
-## 6. Configurations (config.py)
+#### 6. Configurations (config.py)
 
 **config**
 
@@ -124,7 +118,7 @@ Photo Credits: <a href="https://unsplash.com/@bradbarmore">Brad Bradmore</a> and
 3. **`dense_units`** :- Number of Dense units in Decoder(RNN) Model
 4. **`dropout`** :- Dropout probability used in Dropout layer in Decoder(RNN) Model
 
-## 7. Frequently encountered problems
+#### 7. Frequently encountered problems
 
 - **Out of memory issue**:
   - Try reducing `batch_size`
@@ -132,11 +126,9 @@ Photo Credits: <a href="https://unsplash.com/@bradbarmore">Brad Bradmore</a> and
   - Due to stochastic nature of these algoritms, results *may* differ slightly everytime. Even though I did set random seed to make results reproducible, results *may* differ slightly.
 - **Results aren't very great using beam search compared to argmax**:
   - Try higher `k` in BEAM search using `beam_search_k` parameter in config. Note that higher `k` will improve results but it'll also increase inference time significantly.
-## 8. References
+#### 8. References
 
-<ul type="square">
-	<li><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Vinyals_Show_and_Tell_2015_CVPR_paper.pdf">Show and Tell: A Neural Image Caption Generator</a> - Oriol Vinyals, Alexander Toshev, Samy Bengio, Dumitru Erhan</li>
-	<li><a href="https://arxiv.org/abs/1703.09137">Where to put the Image in an Image Caption Generator</a> - Marc Tanti, Albert Gatt, Kenneth P. Camilleri</li>
-	<li><a href="https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/">How to Develop a Deep Learning Photo Caption Generator from Scratch</a></li>
-  <li><a href="https://github.com/dabasajay/Image-Caption-Generator">Image-Caption-Generator</li>
-</ul>
+* [Show and Tell: A Neural Image Caption Generator](https://www.cvfoundation.org/openaccess/content_cvpr_2015/papers/Vinyals_Show_and_Tell_2015_CVPR_paper.pdf) - Oriol Vinyals, Alexander Toshev, Samy Bengio, Dumitru Erhan
+* [Where to put the Image in an Image Caption Generator](https://arxiv.org/abs/1703.09137) - Marc Tanti, Albert Gatt, Kenneth P. Camilleri
+* [How to Develop a Deep Learning Photo Caption Generator from Scratch](https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/)
+* Machine learning code based on [Image-Caption-Generator](https://github.com/dabasajay/Image-Caption-Generator) by [@dabasajay](https://github.com/dabasajay/)
