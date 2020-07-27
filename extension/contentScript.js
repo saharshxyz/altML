@@ -10,14 +10,20 @@ if(currentPageURL.includes(testPageURL)) { // If the current page URL matches th
   console.warn(`altML: altML may run a little differently on this test page (${testPageURL}) than on the rest of the internet. You have been warned!`);
 }
 
-const images = document.images;
+if(currentPageURL.includes("http")) { // If current page looks like it is on the web 
 
-for(i = 0; i < images.length; i++) { // Loop over all of the images in the website
-  let currentImage = images[i];
-  if(currentImage.alt == "" && currentImage.hasAttribute("src") && currentImage.src !== "") { // If the alt tag of the image is empty, the image has an src attribute, and the src attribute is not empty.
-    let oldAlt = images[i].alt;
-    let newAlt = "altML changed the alt attribute in this image." // TODO: Set newAlt to tensorflow result
-    images[i].alt = newAlt; // Changes oldAlt to newAlt
-    console.info(`altML: changed the alt tag in "${images[i].src}" from "${oldAlt}" to "${newAlt}"`);
+  console.info(`altML: Starting image scan...`);
+
+  const images = document.images;
+
+  for(i = 0; i < images.length; i++) { // Loop over all of the images in the website
+    let currentImage = images[i];
+    if(currentImage.alt == "" && currentImage.hasAttribute("src") && currentImage.src !== "") { // If the alt tag of the image is empty, the image has an src attribute, and the src attribute is not empty.
+      let oldAlt = images[i].alt;
+      let newAlt = "altML changed the alt attribute in this image." // TODO: Set newAlt to tensorflow result
+      images[i].alt = newAlt; // Changes oldAlt to newAlt
+      console.info(`altML: changed the alt tag in "${images[i].src}" from "${oldAlt}" to "${newAlt}"`);
+    }
   }
+
 }

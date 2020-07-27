@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>altML</title></head>
+<body>
+
+<style>
+    body {
+        min-width: 300px;
+    }
+</style>
+
+<h1>altML</h1>
+<form>
+    <fieldset>
+        <legend>Options:</legend>
+        <label>Caption server URL <a href="#"><sup>[?]</sup></a></label> <!-- TODO: Add a link for [?] explaining what this means-->
+        <input type="url" id="caption-server-url"/ title="The URL must be secured using https." pattern="https://*">
+        <p><strong>The URL must be secured using https.</strong></p>
+    </fieldset>
+    <button type="submit">Save</button>
+</form>
+
+<script src="popup.js"></script>
+
+</body>
+</html>
