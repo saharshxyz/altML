@@ -1,0 +1,6 @@
+# Ignore repl.it packager files
+poetry.lock
+pyproject.toml
+
+# Stops enviornment variables from being public
+.env
