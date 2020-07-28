@@ -11,4 +11,11 @@ chrome.runtime.sendMessage("loadPreferences", function(response) { // Ask backgr
     
 });
 
-// TODO: Implement save button to update the extension preferences.å
+let serverURLFormData = document.getElementById("caption-server-url"); // Stores element where the caption server URL from the form is
+let serverURLExampleElement = document.getElementById("example"); // Stores element where the example of the query selector URL is
+
+serverURLFormData.addEventListener("input", function captionServerURLChange() { // Whenever any data is changed in the caption server URL input box, set the example of the query selector URL to the caption server URL
+    serverURLExampleElement.innerHTML = serverURLFormData.value;
+});
+
+// TODO: Implement save button to update the extension preferences.

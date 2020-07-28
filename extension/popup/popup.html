@@ -5,7 +5,13 @@
 
 <style>
     body {
-        min-width: 300px;
+        min-width: 600px;
+    }
+    input:valid {
+        color: green;
+    }
+    input:invalid {
+        color: red;
     }
 </style>
 
@@ -13,11 +19,24 @@
 <form>
     <fieldset>
         <legend>Options:</legend>
-        <label>Caption server URL <a href="#"><sup>[?]</sup></a></label> <!-- TODO: Add a link for [?] explaining what this means-->
-        <input type="url" id="caption-server-url"/ title="The URL must be secured using https." pattern="https://*">
-        <p><strong>The URL must be secured using https.</strong></p>
+
+        <label>Caption server URL <a href="#"><sup>[?]</sup></a></label>
+        <input type="url" id="caption-server-url"/ title="The URL must be secured using https, and not include a query string." pattern="https+:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?/=]*)" value="https://server.com/" size="30" required><br>
+        <p><strong>The URL must be secured using https, and not include a query string.</strong></p>
+
+        <label for="message-format">Choose a message format:<a href="#"><sup>[?]</sup></a></label>
+        <select name="message-format" id="message-format">
+            <option value="url">URL Parameter</option>
+            <!--<option value="url">POST</option> TODO: Implement this option with changeable data to send via a POST request -->
+        </select><br>
+
+        <label>Query String<a href="#"><sup>[?]</sup></a></label>
+        <br><span id="example">https://server.com</span><span>?</span><input type="text" id="query-string" title="Query String must only be made up of letters in the English alphabet without spaces." pattern="[A-Za-z]+"  value="img" size="5" required>=https://example.com/image.png
+        
+        
     </fieldset>
     <button type="submit">Save</button>
+    <input type="reset">
 </form>
 
 <script src="popup.js"></script>
