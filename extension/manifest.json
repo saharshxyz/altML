@@ -22,9 +22,23 @@
       "js": ["contentScript.js"]
     }
   ],
+  "icons": { "16": "assets/icons/16icon.png",
+             "24": "assets/icons/24icon.png",
+             "32": "assets/icons/32icon.png",
+             "48": "assets/icons/48icon.png",
+             "64": "assets/icons/64icon.png",
+             "128": "assets/icons/128icon.png",
+             "256": "assets/icons/256icon.png"},
   "browser_action": {
     "default_title": "altML",
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_icons": { "16": "assets/icons/16icon.png",
+                       "24": "assets/icons/24icon.png",
+                       "32": "assets/icons/32icon.png",
+                       "48": "assets/icons/48icon.png",
+                       "64": "assets/icons/64icon.png",
+                       "128": "assets/icons/128icon.png",
+                       "256": "assets/icons/256icon.png"}
   },
   "manifest_version": 2
 }
