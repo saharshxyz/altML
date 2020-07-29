@@ -40,7 +40,7 @@ function onCaptionURLPreferenceChange() {
 }
 
 function restore_options() { // Gets preferences from storage, and updates page with saved preferences
-    chrome.storage.sync.get({ // Get from storage, or if there are no saved preferences, get default values
+    chrome.storage.sync.get({ // Get from storage, or if there are no saved preferences, set default values
       captionServerURL: 'https://caption-server-url.com/',
       messageFormat: "url-parameter",
       queryString: "img"
@@ -50,7 +50,7 @@ function restore_options() { // Gets preferences from storage, and updates page 
       messageFormatPreference.value = syncItems.messageFormat;
       queryStringPreference.value = syncItems.queryString;
       
-      chrome.storage.local.get({ // Gets developer preferences from local storage, or if there are no saved preferences, get default values
+      chrome.storage.local.get({ // Gets developer preferences from local storage, or if there are no saved preferences, set default values
         DEVplaceholderCaptions: false
       }, function (localItems) { // Update page with saved preferences
         DEVplaceholderCaptionsPreference.checked = localItems.DEVplaceholderCaptions; 
