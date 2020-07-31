@@ -4,7 +4,7 @@ from pickle import dump
 import string
 from tqdm import tqdm
 from utils.model import CNNModel
-from keras.preprocessing.image import load_img, img_to_array
+from tensorflow import keras
 from datetime import datetime as dt
 
 # Utility function for pretty printing
@@ -26,12 +26,7 @@ def mytime(with_date=False):
 	}
 """
 def extract_features(path, model_type):
-	if model_type == 'inceptionv3':
-		from keras.applications.inception_v3 import preprocess_input
-		target_size = (299, 299)
-	elif model_type == 'vgg16':
-		from keras.applications.vgg16 import preprocess_input
-		target_size = (224, 224)
+
 	# Get CNN Model from model.py
 	model = CNNModel(model_type)
 	features = dict()
@@ -39,13 +34,13 @@ def extract_features(path, model_type):
 	for name in tqdm(os.listdir(path)):
 		# Loading and resizing image
 		filename = path + name
-		image = load_img(filename, target_size=target_size)
+		image = keras.preprocessing.image.load_img(filename, target_size=target_size)
 		# Convert the image pixels to a numpy array
-		image = img_to_array(image)
+		image = keras.preprocessing.image.img_to_array(image)
 		# Reshape data for the model
 		image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
 		# Prepare the image for the CNN Model model
-		image = preprocess_input(image)
+
 		# Pass image into model to get encoded features
 		feature = model.predict(image, verbose=0)
 		# Store encoded features for the image
