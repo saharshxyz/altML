@@ -109,4 +109,3 @@ def run_model():
                         json.dump(data, f, indent=4)
                     print("Error, something went wrong")
 run_model()
-

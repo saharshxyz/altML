@@ -18,5 +18,3 @@
         $output = exec("./php_response2.py $b64_img_list");
         echo $output;
 ?>
-
-
