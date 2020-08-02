@@ -1,9 +1,7 @@
 import numpy as np
+from tensorflow import keras
 from utils.preprocessing import *
 from pickle import load, dump
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.utils import to_categorical
 import random
 '''
 	*We have Flickr_8k.trainImages.txt and Flickr_8k.devImages.txt files which consist of unique identifiers(id) 
@@ -93,7 +91,7 @@ def to_lines(captions):
 '''
 def create_tokenizer(captions):
 	lines = to_lines(captions)
-	tokenizer = Tokenizer()
+	tokenizer = keras.preprocessing.text.Tokenizer()
 	tokenizer.fit_on_texts(lines)
 	return tokenizer
 
@@ -134,9 +132,9 @@ def create_sequences(tokenizer, max_length, captions_list, image):
 			# Split into input and output pair
 			in_seq, out_seq = seq[:i], seq[i]
 			# Pad input sequence
-			in_seq = pad_sequences([in_seq], maxlen=max_length)[0]
+			in_seq = keras.preprocessing.sequence.pad_sequences([in_seq], maxlen=max_length)[0]
 			# Encode output sequence
-			out_seq = to_categorical([out_seq], num_classes=vocab_size)[0]
+			out_seq = keras.utils.to_categorical([out_seq], num_classes=vocab_size)[0]
 			# Store
 			X1.append(image)
 			X2.append(in_seq)

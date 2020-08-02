@@ -140,7 +140,7 @@ def generate_caption_beam_search(model, tokenizer, image, max_length, beam_index
 			preds = model.predict([image,padded_seq], verbose=0)
 			# Take top (i.e. which have highest probailities) `beam_index` predictions
 			top_preds = np.argsort(preds[0])[-beam_index:]
-			# Getting the top `beam_index` predictions and 
+			# Getting the top `beam_index` predictions and
 			for word in top_preds:
 				next_seq, prob = seq[0][:], seq[1]
 				next_seq.append(word)
