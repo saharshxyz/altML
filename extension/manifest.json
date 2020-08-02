@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "version_name": "1.0.0-pre-alpha",
   "homepage_url": "https://github.com/saharshy29/altML",
-  "description": "A chrome extension that looks at all the images on a webpage. If there is an image that does not have an alt tag, use ml to generate one so that screen-readers can actually recognize it.",
+  "description": "A chrome extension that processes all of the images on a webpage. If there is an image that does not have an alt tag, use machine learning to generate one so that screen-readers can actually recognize it.",
   "incognito": "not_allowed",
   "permissions": [
     "https://*/*",
