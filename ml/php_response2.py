@@ -35,7 +35,7 @@ def http_response():
         data = readJSON()
         while not receivedCaption:
             if(time.time()-t0>90):
-                captions_array.append("An error occured in the server")
+                captions_array.append("An error occurred in the server")
                 break
             data = readJSON()
             length = len(data['img_list'])
