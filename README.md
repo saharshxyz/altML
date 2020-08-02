@@ -1,9 +1,8 @@
 # altML
 
-**Mission:** A chrome extension that processes at all the images on a webpage. If there is an image that does not have an alt tag, use machine learning to generate one so that screen-readers can actually recognize it.
+**Mission:** A chrome extension that processes all of the images on a webpage. If there is an image that does not have an alt tag, use machine learning to generate one so that screen-readers can actually recognize it.
 
 Created by [May F.,](https://github.com/maydonut) [James K.](https://github.com/thatrobotdev), and [Jonathan A.](https://github.com/jonny13), during the [CodeLabs Internship 2020](https://labs.codeday.org/). Mentored by [Saharsh Yeruva](https://saharsh.tech).
-
 
 altML is made up of three parts: there is the chrome extension that the user interacts with, the machine learning model that generates captions, and the [Flask server](https://repl.it/github/saharshy29/altML) that provides an alternate way to recieve captions.
 
