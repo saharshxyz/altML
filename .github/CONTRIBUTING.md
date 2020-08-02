@@ -68,53 +68,6 @@ When you are ready to commit your changes, go to the "Version Control" tab on th
 
 When you click commit & push, you can now go to GitHub and create a pull request from your clone to the altML repository.
 
-## Updating the Changelog
-When you are making a major or notable change, you should make a line (or a couple of lines) in the CHANGELOG.md file, giving a good place for users and contributors to track changes.
-
-The changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),and version numbering for this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-### Sample Release
-
-Here is a sample version of a release:
-
-**NOTES:** Link the version number to the GitHub Release. When features are primarily worked on by a person / group of people, feel free to credit them in the changelog!
-
----
-## [MAJOR.MINOR.PATCH] - YYYY-MM-DD
-### Chrome Extension
-
-**Added** ✨
-- Cool new feature by ([@GitHub Username](https://github.com/user))
-- Other cool feature by ([@User1](https://github.com/user) & [@User2](https://github.com/user))
-- Another amazing feature
-- The best feature ever
-
-**Changed** ✅
-- ...
-
-**Fixed** 🐛
-- ...
-
-**Removed** 🔥
-- ...
-
-**Security** 🔒
-- ...
-
-**Deprecated** 🗑
-- ...
-
-### Neural Network
-...
-### Flask API Server
-...
-
----
-
-In the [CHANGELOG.md](CHANGELOG.md), there is also an "Unreleased" section. This is where changes go under before a release is put out. Generally, you should add your features under the "Unreleased" section. Once the extension is ready for release, these features will be moved from the "Unreleased" section and given a proper version number.
-
-Remember to report any breaking changes in the feature notes.
-
 ## Crafting a commit message
 When you are ready to commit your changes to the repo, we have a couple of guidelines for commit messages that maintainers are not required to follow, but they make the commit history look nice 😄.
 
