@@ -8,9 +8,15 @@
 - [ ] Any significant changes are noted in the changelog
 - [ ] This PR is bringing my changes to the `main` branch, unless I am releasing a version.
 - [ ] No API keys, enviornment secrets, or other private things are commited publically into the repo
-- [ ] (Chrome Extension changes only) The development settings panel is hidden.
-- [ ] (Chrome Extension changes only) My PR doesn't break any rules in Chrome Webstore's Developer Program Policies here: https://developer.chrome.com/webstore/program_policies
-- [ ] I understand that my changes will be commited to altML under the MIT License located in the [LICENSE.md](LICENSE.md) file.
+- [ ] I understand that my changes will be commited to altML under the MIT License located in the [LICENSE.md](https://github.com/saharshy29/altML/blob/main/LICENSE.md) file.
+
+### Chrome extension changes only
+- [ ] The development settings panel is hidden.
+- [ ] I've tested my changes in the latest production versions of both Google Chrome and Microsoft Edge.
+- [ ] My PR doesn't break any rules in [Chrome's Developer Program Policies](https://developer.chrome.com/webstore/program_policies).
+- [ ] My PR doesn't break any rules in the [Microsoft Edge Addons Catalog Developer Policies](https://docs.microsoft.com/en-us/microsoft-edge/extensions-chromium/store-policies/developer-policies).
+- [ ] My PR doesn't use [any Extension APIs not supported by Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/extensions-chromium/developer-guide/port-chrome-extension).
+
 
 ## Related Issues
 
