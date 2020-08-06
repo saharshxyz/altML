@@ -10,7 +10,6 @@ This project, and everyone participating in it is governed by the [altML Code Of
 
 ## Quick Links
 - [**Found a bug? Report it on our issue tracker**](https://github.com/saharshy29/altML/issues)
-- [**Found a security vulnerability? Check out SECURITY.md](SECURITY.md)
 
 ## Getting started
 altML is made up of three parts: there is the chrome extension that the user interacts with, the machine learning model that generates captions, and the [Flask server](https://repl.it/github/saharshy29/altML) that provides an alternate way to recieve captions. To develop for each of these, there are different ways to set them up.
