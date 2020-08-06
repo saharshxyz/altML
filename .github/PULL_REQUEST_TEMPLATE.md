@@ -6,9 +6,9 @@
 <!-- Insert a description of your changes here-->
 
 - [ ] Any significant changes are noted in the changelog
-- [ ] This PR is bringing my changes to the `main` branch, unless I am releasing a version.
-- [ ] No API keys, enviornment secrets, or other private things are commited publically into the repo
-- [ ] I understand that my changes will be commited to altML under the MIT License located in the [LICENSE.md](https://github.com/saharshy29/altML/blob/main/LICENSE.md) file.
+- [ ] This PR is bringing my changes to the `main` branch unless I am releasing a version.
+- [ ] No API keys, environment secrets, or other private things are committed publically into the repo
+- [ ] I understand that my changes will be committed to altML under the MIT License located in the [LICENSE.md](https://github.com/saharshy29/altML/blob/main/LICENSE.md) file.
 
 
 <!-- Uncomment this section out (by removing line 14 and line 21), if you are making changes to the Browser Extension
